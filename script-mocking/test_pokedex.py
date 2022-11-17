@@ -12,6 +12,9 @@ class MockResponse:
 
 
 def test_get_ok(mocker) -> None:
+    """
+    Patch the requests module imported into the pokedex script.
+    """
     input = "weedle"
     expected_response = {"name": "weedle", "id": 13}
 
