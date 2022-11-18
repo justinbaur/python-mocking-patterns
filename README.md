@@ -2,7 +2,7 @@
 
 Showcase for different mocking patterns in Python.
 
-## Patterns by Organizational
+## Patterns by Organizational Structure
 
 The patterns will be broken out into their own project folder with a `README.md` detailing the example mock.  A pattern will focus on where to patch, <https://docs.python.org/3/library/unittest.mock.html#where-to-patch>, in the context of the organizationl structure.
 
