@@ -1,0 +1,79 @@
+[tool.poetry]
+name = "pokedex"
+version = "1.0.0"
+description = "Example pokedex module for mocking"
+license = "GPL-3.0"
+authors = ["Justin Baur <justinbaur@outlook.com>"]
+readme = "README.md"
+repository = "https://github.com/justinbaur/python-template"
+packages = [
+    {include = "pokedex", from = "src"}
+]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+python-dotenv = "^0.21"
+
+[tool.poetry.dev-dependencies]
+coverage = "^6.5"
+flake8 = "^5.0"
+flake8-use-fstring = "^1.4"
+isort = "^5.10"
+mypy = "^0.990"
+pytest = "^7.2"
+pytest-cov = "^4.0"
+pytest-mock = "^3.10"
+tox = "^3.27"
+yapf = "^0.32.0"
+toml = "^0.10"
+
+[tool.isort]
+src_paths = ["src","test"]
+line_length = "150"
+color_output = true
+
+[tool.mypy]
+warn_return_any = true
+warn_unused_configs = true
+warn_unused_ignores = true
+follow_imports = "silent"
+ignore_missing_imports = true
+disallow_untyped_defs = true
+show_error_codes = true
+
+[tool.pytest.ini_options]
+log_cli = true
+log_cli_level = "DEBUG"
+addopts = "-vv"
+pythonpath = ["src"]
+testpaths = ["test"]
+
+[tool.coverage.run]
+branch = true
+include = [ "src/*" ]
+omit = [ "**/domain/**", "**/__init__.py" ]
+
+[tool.coverage.report]
+show_missing = true
+fail_under = 70
+include = [ "src/*" ]
+omit = [ "**/domain/**", "**/__init__.py" ]
+
+[tool.yapf]
+allow_split_before_dict_value = false
+based_on_style = "pep8"
+blank_lines_around_top_level_definition = "2"
+blank_lines_between_top_level_imports_and_variables = "1"
+blank_line_before_nested_class_or_def = true
+coalesce_brackets = true
+column_limit = "150"
+dedent_closing_brackets = true
+spaces_around_dict_delimiters = true
+spaces_around_list_delimiters = true
+spaces_around_subscript_colon = true
+spaces_around_tuple_delimiters = false
+split_before_first_argument = false

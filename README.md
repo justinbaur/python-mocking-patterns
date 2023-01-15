@@ -1,10 +1,12 @@
 # Python Mocking Patterns
 
-Showcase for different mocking patterns in Python.
+## Introduction
+
+The biggest hurdle writing python mocks I've seen developers stumble on, including myself, is where to patch. This repository is a collection of patterns for patching different scenarios.
 
 ## Patterns by Organizational Structure
 
-The patterns will be broken out into their own project folder with a `README.md` detailing the example mock.  A pattern will focus on where to patch, <https://docs.python.org/3/library/unittest.mock.html#where-to-patch>, in the context of the organizationl structure.
+The patterns will be broken out into project folders with a `README.md` detailing the example mock.  A pattern will focus on where to patch, <https://docs.python.org/3/library/unittest.mock.html#where-to-patch>, in the context of each organizationl structure.
 
 These patterns will use `pytest` and `pytest-mock` but can easliy be converted to the base `unittest` and `unittest.mock` modules.
 
@@ -29,7 +31,7 @@ This example will use an opinionated project conifguration:
 
 - `venv` - Setup a virtual environment for segregating dependencies in this example
 - `poetry` - Dependency management using `pyproject.toml`
-- `tox`- Quality gate orchestration and execution of the tests
+- `tox`- Quality gate orchestration and execution of tests
 
 ## References
 

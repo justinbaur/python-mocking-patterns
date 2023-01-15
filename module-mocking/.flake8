@@ -1,0 +1,15 @@
+[flake8]
+format=pylint
+max-line-length=150
+percent-greedy=2
+format-greedy=2
+enable-extensions=FS003
+inline-quotes="
+docstring-quotes="""
+# E126 continuation line over-indented for hanging indent
+# E201 whitespace after '{' and '['
+# E201 whitespace before '{' and '['
+ignore=
+  E126,
+  E201,
+  E202
