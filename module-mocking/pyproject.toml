@@ -5,7 +5,7 @@ description = "Example pokedex module for mocking"
 license = "GPL-3.0"
 authors = ["Justin Baur <justinbaur@outlook.com>"]
 readme = "README.md"
-repository = "https://github.com/justinbaur/python-template"
+repository = "https://github.com/justinbaur/python-mocking-patterns"
 packages = [
     {include = "pokedex", from = "src"}
 ]
@@ -17,6 +17,8 @@ build-backend = "poetry.core.masonry.api"
 [tool.poetry.dependencies]
 python = "^3.11"
 python-dotenv = "^0.21"
+rich = "^13.1"
+httpx = "^0.23"
 
 [tool.poetry.dev-dependencies]
 coverage = "^6.5"
