@@ -1,4 +1,4 @@
-import requests
+import httpx
 import json
 from rich import print
 from typing import Any
@@ -14,7 +14,7 @@ class PokemonService:
         Return a Pokedex entry from the public API based on the Pokemon's common name
         """
         pokedex_entry = {}
-        response = requests.get(f"{self.pokeapi_url}{name}")
+        response = httpx.get(f"{self.pokeapi_url}{name}")
         if response.status_code == 200:
             pokedex_entry: dict[str, Any] = response.json()
         else:
