@@ -20,7 +20,7 @@ Execute tests with Tox: `tox`
   - `display_service.py` usage of `
 - Mocking decorators
 - Mocking files
-  - `pokedex_service.py` usage of `save.json`
+  - `save_service.py` usage of `save.json`
 - Mocking library imports
   - `pokedex_service.py` usage of httpx
 - Mocking non class modules imports
@@ -28,6 +28,7 @@ Execute tests with Tox: `tox`
 - Mocking env variables
   - `pokedex_service.py` usage of `pokedex_api_url`
 - Mock before a yield of a class
+  - `pokemon_service.py` usage of `app_config.py` method `load_language_translations`
 
 ## Bonus mocking content
 

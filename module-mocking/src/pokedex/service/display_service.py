@@ -14,4 +14,15 @@ class DisplayService:
         pokedex_number = pokedex_entry.get("id", -1)
 
         print(f"[blue]Pokedex Entry {pokedex_number}[/blue]")
-        print(f"[blue]{pokemon_name}[/blue]")
+        print(f"[green]Name: {pokemon_name}[/green]")
+
+        self.display_pokemon_species()
+
+    def display_pokemon_species(self, id: int) -> None:
+        """
+        blah
+        """
+        species_entry = self.pokemon_service.get_pokemon_species(id)
+        color = species_entry.get("color", {})
+
+        print(f"[green]Color: {color.get('name', '')}[/green]")
