@@ -1,4 +1,4 @@
-# Module
+# Module Mocking
 
 ## Overview
 
@@ -14,14 +14,24 @@ This pattern shows the use of mocking with from within a built Python module.
 
 Execute tests with Tox: `tox`
 
-## Mocks
+## Mock Descriptions
 
-- Mocking methods internal to your class
-  - `display_service.py` usage of `
-- Mocking decorators
-- Mocking files
+Test mocking methods internal to your class
+
+- Description
+  - `display_service.py` usage of the `display_pokedex_entry` method calling `display_pokemon_species`
+- Test Location
+  - `module-mocking/test/test_class_mock.py`
+
+Test mocking a file
+
+- Description
   - `save_service.py` usage of `save.json`
-- Mocking library imports
+- Test Location
+  - `module-mocking/test/test_file_mock.py`
+
+Mocking library imports
+
   - `pokedex_service.py` usage of httpx
 - Mocking non class modules imports
   - `pokedex_service.py` usage of `get_default_region` from `app_config.py`
@@ -29,6 +39,7 @@ Execute tests with Tox: `tox`
   - `pokedex_service.py` usage of `pokedex_api_url`
 - Mock before a yield of a class
   - `pokemon_service.py` usage of `app_config.py` method `load_language_translations`
+- Mocking decorators
 
 ## Bonus mocking content
 
