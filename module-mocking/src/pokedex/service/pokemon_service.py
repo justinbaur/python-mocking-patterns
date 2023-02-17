@@ -1,7 +1,10 @@
+from typing import Any
+
 import httpx
 from rich import print
-from typing import Any
-from pokedex.config.app_config import pokedex_api_url, load_language_translations
+
+from pokedex.config.app_config import load_language_translations, pokedex_api_url
+
 
 class PokemonService:
 
@@ -13,10 +16,10 @@ class PokemonService:
         """
         Return a Pokedex entry from the Pokemon's common name
         """
-        pokedex_entry = {}
+        pokedex_entry: dict[str, Any] = {}
         response = httpx.get(f"{self.pokeapi_url}/pokemon/{name}")
         if response.status_code == 200:
-            pokedex_entry: dict[str, Any] = response.json()
+            pokedex_entry = response.json()
         else:
             print("[red]Failed to load pokemon from pokedex![/red]")
         return pokedex_entry
@@ -25,34 +28,34 @@ class PokemonService:
         """
         Return a Pokedex entry from the Pokemon's common name
         """
-        species_entry = {}
+        species_entry: dict[str, Any] = {}
         response = httpx.get(f"{self.pokeapi_url}/pokemon-species/{id}")
         if response.status_code == 200:
-            species_entry: dict[str, Any] = response.json()
+            species_entry = response.json()
         else:
             print("[red]Failed to load pokemon species from pokedex![/red]")
         return species_entry
 
     def get_region(self, name: str) -> dict:
         """
-        Return a region entry 
+        Return a region entry
         """
-        region_entry = {}
+        region_entry: dict[str, Any] = {}
         response = httpx.get(f"{self.pokeapi_url}/region/{name}")
         if response.status_code == 200:
-            region_entry: dict[str, Any] = response.json()
+            region_entry = response.json()
         else:
             print("[red]Failed to load region from pokedex![/red]")
         return region_entry
 
     def get_loction_area(self, name: str) -> dict:
         """
-        Return a region entry 
+        Return a region entry
         """
-        location_area_entry = {}
+        location_area_entry: dict[str, Any] = {}
         response = httpx.get(f"{self.pokeapi_url}/location-area/{name}")
         if response.status_code == 200:
-            location_area_entry: dict[str, Any] = response.json()
+            location_area_entry = response.json()
         else:
             print("[red]Failed to load location entry from pokedex![/red]")
         return location_area_entry
